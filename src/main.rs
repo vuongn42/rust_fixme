@@ -40,7 +40,7 @@ impl Display for Color
         let blue_1 =  stringify!(blue);
 
         // formating the string
-    write!(f, "{}: {}, {}: {}, {}: {}",
+        write!(f, "{}: {},{}: {},{}: {}",
         red_1, self.red, 
         green_1, self.green,
         blue_1, self.blue,)
