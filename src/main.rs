@@ -29,6 +29,24 @@ struct Color {
     blue: u8,
 }
 
+// added a Display for color
+impl Display for Color 
+{
+    
+    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+        // change the change to varibles to string
+        let red_1 =  stringify!(red);
+        let green_1 =  stringify!(green);
+        let blue_1 =  stringify!(blue);
+
+        // formating the string
+    write!(f, "{}: {}, {}: {}, {}: {}",
+        red_1, self.red, 
+        green_1, self.green,
+        blue_1, self.blue,)
+    }
+}
+
 fn main() {
     for city in [
         City { name: "Glassboro", lat: 39.702892, lon: -75.111839 },
@@ -44,6 +62,6 @@ fn main() {
         Color { red: 0, green: 0, blue: 0 },
     ].iter() {
         // Hint : Fix the code so you can print it using {}
-        println!("{:?}", *color);
+        println!("{}", *color);
     }
 }
